@@ -47,5 +47,9 @@ try:
             for bracket in frequency:
                 if letter == bracket[0]:
                     text.write(f'{bracket[0].upper()} {bracket[1]}\n')
+        if len(letters) == 26:
+            text.write(f'It does have all letters')
+        else:
+             text.write(f'It does NOT have all letters')
 except:
     print(f'File {file_name} not found')
