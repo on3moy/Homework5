@@ -31,12 +31,13 @@ try:
         for line in content:
             content = line.rstrip('\n')
             for letter in content:
-                if letter.lower() not in letters and ord(letter.lower()) >= 97 and ord(letter.lower()) <= 122:
-                    letters += [letter.lower()]
-                    frequency += [[letter.lower(),1]]
+                letter = letter.lower()
+                if letter not in letters and ord(letter) >= 97 and ord(letter) <= 122:
+                    letters += [letter]
+                    frequency += [[letter,1]]
                 else:
                     for bracket in frequency:
-                        if letter.lower() in bracket[0]:
+                        if letter in bracket[0]:
                             frequency[frequency.index(bracket)][1] += 1
     letters.sort()
     summary = 'summary.txt'
@@ -50,6 +51,6 @@ try:
         if len(letters) == 26:
             text.write(f'It does have all letters')
         else:
-             text.write(f'It does NOT have all letters')
+            text.write(f'It does NOT have all letters')
 except:
     print(f'File {file_name} not found')

@@ -138,4 +138,4 @@ dmypy.json
 cython_debug/
 
 # Removes test Jupyter Notebook File
-test.ipynb
+/test
