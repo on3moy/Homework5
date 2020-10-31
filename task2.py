@@ -36,16 +36,16 @@ try:
                     frequency += [[letter.lower(),1]]
                 else:
                     for bracket in frequency:
-                        if letter.lower() in freq:
+                        if letter.lower() in bracket[0]:
                             frequency[frequency.index(bracket)][1] += 1
-    # letters.sort()
-    # summary = 'summary.txt'
-    # write_mode = 'w'
+    letters.sort()
+    summary = 'summary.txt'
+    write_mode = 'w'
     
-    # with open(summary,write_mode) as text:
-    #     for letter in letters:
-    #         for bracket in frequency:
-    #             if letter == bracket[0]:
-    #                 text.write(f'{bracket[0].upper()} {bracket[1]}\n')
+    with open(summary,write_mode) as text:
+        for letter in letters:
+            for bracket in frequency:
+                if letter == bracket[0]:
+                    text.write(f'{bracket[0].upper()} {bracket[1]}\n')
 except:
-    print('File not found')
+    print(f'File {file_name} not found')
